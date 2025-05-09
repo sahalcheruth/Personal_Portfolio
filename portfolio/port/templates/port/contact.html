@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta name="format-detection" content="telephone=no">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-KB/MEcYbAOZTnKc9b2ovUe5Za1Cm2ztHRYq+/hXoz/FnyAk7StVX0U4HnOVtuZ8+H2Jc1iKxEN3LtVo3dQ+gHw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+
+</head>
+<body style='background-color:#0b4218;'>
+
+
+
+  <nav>
+    <div class="nav-container">
+        <div class="logo logomobile" data-aos="zoom-in" data-aos-duration="1000">
+           <h1> <span>SAHAL CHERUTTH</span></h1>
+        </div>
+        <div class="links">
+            <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="{% url 'home' %}">Home</a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="{% url 'about' %}">About</a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="{% url 'skill' %}">Skills</a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="{% url 'resume' %}">Resume</a></div>
+
+
+            <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="{% url 'contact' %}">Contact Me</a></div>
+
+          </div>   
+        </div>
+<div class="mobileicon" style="text-align: center;padding-top: 20px;">            
+<div>
+ <i class="fa-solid fa-bars hamburg" onclick="showDropdown()" style="position: sticky; right: 40%;"></i>
+ </div>
+<div id="customDropdown" style="
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: rgba(0,0,0,0.95);
+z-index: 10000000;
+">
+
+<div class="container d-flex flex-column align-items-center justify-content-center h-100 gap-4">
+<a class="text fs-3" style="text-decoration:none;font-family: Georgia, 'Times New Roman', Times, serif;color: rgb(150, 15, 15); " href="{% url 'home' %}" >Home</a>
+<a class="text fs-3" style="text-decoration:none; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(150, 15, 15);" href="{% url 'skill' %}">Skills</a>
+<a class="text fs-3" style="text-decoration:none;font-family: Georgia, 'Times New Roman', Times, serif;color: rgb(150, 15, 15);" href="{% url 'resume' %}">Resume</a>
+<a class="text fs-3" style="text-decoration:none;font-family: Georgia, 'Times New Roman', Times, serif;color: rgb(150, 15, 15);" href="{% url 'about' %}">About Me</a>
+<a class="text fs-3" style="text-decoration:none;font-family: Georgia, 'Times New Roman', Times, serif;color: rgb(150, 15, 15);" href="{% url 'contact' %}">Contact Me</a>
+<i class="fa-solid fa-xmark fs-2 text-white" onclick="cancelDropdown()" style="cursor: pointer;"></i>
+</div>
+</div>
+
+</nav>
+
+
+
+ 
+
+<div class="container mt-5 mobileform ">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="contact-form fade-in-form" style="background-color: rgb(134, 20, 10);padding: 20px;border-radius: 1%;box-shadow: 0 0 15px rgb(0, 0, 0)" data-aos="fade-up" data-aos-duration="1000">
+  
+                <h2 class="text-center mb-4" style="text-align: center;font-family: 'Times New Roman', Times, serif;color: white;">Let's get in touch</h2>
+    <form method="POST">
+  
+                    {% csrf_token %}
+  
+                    <div class="mb-3">
+                        <label for="name" class="form-label"style="text-align: center;font-family: 'Times New Roman', Times, serif;color: white;"></label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
+                        <div class="invalid-feedback">Please provide your name.</div>
+                    </div>
+  
+                    <div class="mb-3">
+                        <label for="email" class="form-label" style="text-align: center;font-family: 'Times New Roman', Times, serif;color:white;"></label>
+                        <input type="email" name="email" id="email" class="form-control"  placeholder="Your Email" required>
+                        <div class="invalid-feedback">Please provide a valid email address.</div>
+                    </div>
+  
+  
+  
+                    <div class="mb-3">
+                      <label for="phone" class="form-label" style="text-align: center; font-family: 'Times New Roman', Times, serif; color: white;">
+                          
+                      </label>
+                      <input type="tel" name="phone" id="phone" class="form-control" required pattern="[0-9]{10}" placeholder="Your Name">
+                      <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+                  </div>
+                  
+  
+                    <div class="mb-3">
+                        <label for="message" class="form-label"style="text-align: center;font-family: 'Times New Roman', Times, serif;color: white;"></label>
+                        <textarea name="message" id="message" rows="10" class="form-control" placeholder="Your Message" required></textarea>
+                        <div class="invalid-feedback">Please enter your message.</div>
+                    </div>
+  
+                    <button type="submit" class="btn btn-custom w-100" style="color: antiquewhite;"><img src="https://cdn-icons-png.flaticon.com/512/12439/12439274.png" alt="send" width="15px">&nbsp;  Send</button>
+                </form>
+  
+                {% if success %}
+                    <p class="success-message mt-3">Message sent successfully!</p>
+                {% endif %}
+  
+  
+              <div style="text-align: center;padding-top: 60px;color: white; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding-bottom: 60px;">
+                <h1 style="font-family: Georgia, 'Times New Roman', Times, serif; font-weight: 800;">You can find Us at</h1>
+  
+               <br>
+               <br>
+               
+                <p style="font-family: Georgia, 'Times New Roman', Times, serif;">EMAIL <br>sahalxcheruth@gmail.com</p>
+               
+  
+  
+                <br>
+                <p style="font-family: Georgia, 'Times New Roman', Times, serif;text-decoration: none;">PHONE NUMBER <br><spam style="text-decoration: none;color: rgb(210, 175, 0);">07034136933</spam></p>
+              
+              
+  
+                <br>
+                <p style="font-family: Georgia, 'Times New Roman', Times, serif;">LOCATION <br>Malappuram,Kerala</p>
+                
+  
+  
+              </div>
+            </div>
+            
+        </div>
+  
+  
+      
+    </div>
+  </div>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+
+
+
+
+
+<style>
+    .btn-custom {
+      background-color: #041a32;
+      color: white;
+      border: none;
+      transition: all 0.3s ease;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+      transition: all 0.3s ease-in-out;
+      font-size: 20px;
+
+
+    }
+
+    .btn-custom:hover {
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+      transform: scale(1.05);
+      background-color: black;
+      color:#e1e4e2;
+      transition: all 0.3s ease-in-out;
+
+
+    }
+
+    .fade-in-form {
+     opacity: 0;
+     transform: translateY(50px);
+     animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+     to {
+         opacity: 1;
+         transform: translateY(0);
+    }
+    }
+  </style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,  // Animates only once while scrolling down
+  });
+</script>
+</style>
+
+
+<script>
+  function showDropdown() {
+    const dropdown = document.getElementById('customDropdown');
+    document.body.appendChild(dropdown); // move it to the end of body
+    dropdown.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function cancelDropdown() {
+    const dropdown = document.getElementById('customDropdown');
+    dropdown.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Skills</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-KB/MEcYbAOZTnKc9b2ovUe5Za1Cm2ztHRYq+/hXoz/FnyAk7StVX0U4HnOVtuZ8+H2Jc1iKxEN3LtVo3dQ+gHw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+
+</head>
+<body>
+
+
+  <nav>
+    <div class="nav-container">
+        <div class="logo logomobile" data-aos="zoom-in" data-aos-duration="1000">
+           <h1> <span>SAHAL CHERUTTH</span></h1>
+        </div>
+        <div class="links">
+            <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="{% url 'home' %}">Home</a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="{% url 'about' %}">About</a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="{% url 'skill' %}">Skills</a></div>
+            <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="{% url 'resume' %}">Resume</a></div>
+
+
+            <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="{% url 'contact' %}">Contact Me</a></div>
+
+          </div>   
+        </div>
+<div class="mobileicon" style="text-align: center;padding-top: 20px;">            
+<div>
+ <i class="fa-solid fa-bars hamburg" onclick="showDropdown()" style="position: sticky; right: 40%;"></i>
+ </div>
+<div id="customDropdown" style="
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: rgba(0,0,0,0.95);
+z-index: 10000000;
+">
+
+<div class="container d-flex flex-column align-items-center justify-content-center h-100 gap-4">
+<a class="text fs-3" style="text-decoration:none;font-family: Georgia, 'Times New Roman', Times, serif;color: rgb(150, 15, 15); " href="{% url 'home' %}" >Home</a>
+<a class="text fs-3" style="text-decoration:none; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(150, 15, 15);" href="{% url 'skill' %}">Skills</a>
+<a class="text fs-3" style="text-decoration:none;font-family: Georgia, 'Times New Roman', Times, serif;color: rgb(150, 15, 15);" href="{% url 'resume' %}">Resume</a>
+<a class="text fs-3" style="text-decoration:none;font-family: Georgia, 'Times New Roman', Times, serif;color: rgb(150, 15, 15);" href="{% url 'about' %}">About Me</a>
+<a class="text fs-3" style="text-decoration:none;font-family: Georgia, 'Times New Roman', Times, serif;color: rgb(150, 15, 15);" href="{% url 'contact' %}">Contact Me</a>
+<i class="fa-solid fa-xmark fs-2 text-white" onclick="cancelDropdown()" style="cursor: pointer;"></i>
+</div>
+</div>
+
+</nav>
+
+
+
+    <div class="background">
+        <img src="{% static 'images/coding.webp' %}" alt="Background Image">
+    </div>
+
+  <div class="container skills-section fade-in-form" data-aos="zoom-in-right" data-aos-duration="2500">
+    <h1 class="text-center mb-5" style="font-family: Georgia, 'Times New Roman', Times, serif;color:#fce6f1;font-weight: 900;">Tools & Technologies</h1>
+    <div class="row g-4">
+
+      <!-- HTML Card -->
+      <div class="col-md-4">
+        <div class="card skill-card html-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s" alt="HTML">
+          <h3>HTML</h3>
+          <p>Markup, semantics, accessibility</p>
+        </div>
+      </div>
+
+      <!-- CSS Card -->
+      <div class="col-md-4">
+        <div class="card skill-card css-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS">
+          <h3>CSS</h3>
+          <p>Responsive design, Flexbox, Grid</p>
+        </div>
+      </div>
+
+      <!-- JavaScript Card -->
+      <div class="col-md-4">
+        <div class="card skill-card js-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
+          <h3>JavaScript</h3>
+          <p>ES6+, DOM manipulation, Events</p>
+        </div>
+      </div>
+
+      <!-- jQuery Card -->
+      <div class="col-md-4">
+        <div class="card skill-card jquery-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://www.shareicon.net/data/512x512/2015/09/03/95028_blue_512x512.png" alt="jQuery">
+          <h3>jQuery</h3>
+          <p>DOM manipulation, Animations</p>
+        </div>
+      </div>
+
+      <!-- Bootstrap 5 Card -->
+      <div class="col-md-4">
+        <div class="card skill-card bootstrap-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" alt="Bootstrap 5">
+          <h3>Bootstrap 5</h3>
+          <p>Responsive grid, components, utilities</p>
+        </div>
+      </div>
+
+      <!-- MySQL Card -->
+      <div class="col-md-4">
+        <div class="card skill-card mysql-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/mysql-1-logo.png" alt="MySQL">
+          <h3>MySQL</h3>
+          <p>Relational databases, SQL queries</p>
+        </div>
+      </div>
+
+      <!-- PL/SQL Card -->
+      <div class="col-md-4">
+        <div class="card skill-card plsql-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://www.svgrepo.com/show/373980/plsql.svg" alt="PL/SQL">
+          <h3>PL/SQL</h3>
+          <p>Stored procedures, triggers</p>
+        </div>
+      </div>
+
+      <!-- Python Card -->
+      <div class="col-md-4">
+        <div class="card skill-card python-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+          <h3>Python</h3>
+          <p>Backend, scripting, automation</p>
+        </div>
+      </div>
+
+
+
+      <!-- Tkinter Card -->
+      <div class="col-md-4">
+        <div class="card skill-card tkinter-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://miro.medium.com/v2/resize:fit:680/1*AIlWq29GeP1eny3wA7aMgA.png" alt="Tkinter">
+          <h3>Tkinter</h3>
+          <p>GUI for desktop apps</p>
+        </div>
+      </div>
+
+      <!-- GitHub Card -->
+      <div class="col-md-4">
+        <div class="card skill-card github-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+          <h3>GitHub</h3>
+          <p>Version control, collaboration</p>
+        </div>
+      </div>
+
+      <!-- PythonAnywhere Card -->
+      <div class="col-md-4">
+        <div class="card skill-card pythonanywhere-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://cdn-1.webcatalog.io/catalog/pythonanywhere/pythonanywhere-social-preview.png?v=1714777852504" alt="PythonAnywhere">
+          <h3>PythonAnywhere</h3>
+          <p>Cloud-based Python development</p>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-4">
+        <div class="card skill-card css-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://download.logo.wine/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.png" alt="CSS">
+          <h3>AWS</h3>
+          <p>Cloud computing,deployment,automation</p>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="col-md-4">
+        <div class="card skill-card aws-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" alt="AWS">
+          <h3>React</h3>
+          <p>Cloud services, EC2, S3</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card skill-card css-card" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1365px-Figma-logo.svg.png" alt="CSS">
+          <h3>Figma</h3>
+          <p>UI/UX Design, Wireframing, Prototyping</p>
+        </div>
+      </div>
+
+
+
+
+   <!-- PythonAnywhere Card -->
+   <div class="col-md-4">
+    <div class="card skill-card pythonanywhere-card" data-aos="zoom-in-right" data-aos-duration="2500">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRThmv6UPsKq-XuRX2VWXBiryi7YYcd_sBivg&s" alt="PythonAnywhere">
+      <h3>Adobe XD</h3>
+      <p>UI Design, Prototyping, Interactive Mockups</p>
+    </div>
+  </div>
+</div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,  // Animates only once while scrolling down
+  });
+</script>
+</style>
+
+
+<script>
+  function showDropdown() {
+    const dropdown = document.getElementById('customDropdown');
+    document.body.appendChild(dropdown); // move it to the end of body
+    dropdown.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function cancelDropdown() {
+    const dropdown = document.getElementById('customDropdown');
+    dropdown.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+</script>
+
+</body>
+</html>
